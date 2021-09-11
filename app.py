@@ -31,3 +31,5 @@ def create_todo():
 @app.route('/')
 def index():
     return render_template('index.html', data=Todo.query.all())
+
+# Alembic use pending.
