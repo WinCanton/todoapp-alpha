@@ -6,6 +6,11 @@
         #error {
             display: none;
         }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
     </style>
     <body>
         <div id="error" class="hidden">Something went wrong!</div>
@@ -15,7 +20,9 @@
         </form>
         <ul id="todos">
             {% for d in data %}
-            <li>{{ d.description }}</li>
+            <li>
+                <input type="checkbox" {% if d.completed %} checked {% endif %}/> {{ d.description }}
+            </li>
             {% endfor %}
         </ul>
         <script>
